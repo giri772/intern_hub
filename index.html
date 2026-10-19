@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./style.css">
+<script src="./script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover internships, save opportunities and start your career with InternHub.">
+  <title>InternHub | Find Your Future</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#internship-list">Skip to internships</a>
+
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-icon">I</span> InternHub
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#internship-list">Internships</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="saved-toggle" class="secondary-button" type="button">
+        Saved <span id="saved-count">0</span>
+      </button>
+      <button id="login-button" class="primary-button" type="button">
+        Login / Sign Up
+      </button>
+      <div id="user-menu" class="user-menu" hidden>
+        <button id="profile-button" class="secondary-button" type="button"></button>
+        <button id="logout-button" class="secondary-button" type="button">
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR CAREER STARTS HERE</p>
+        <h1>Find your dream<br><span>internship today.</span></h1>
+        <p class="hero-description">
+          Discover exciting opportunities, learn new skills,
+          and turn your ambitions into a career.
+        </p>
+        <div class="hero-actions">
+          <a href="#internship-list" class="primary-button">Explore Internships</a>
+          <a href="#about" class="secondary-button">Learn About Us</a>
+        </div>
+        <div class="hero-highlights">
+          <span>✓ Student friendly</span>
+          <span>✓ Multiple domains</span>
+          <span>✓ Easy discovery</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-center">
+          <span>✦</span>
+          <strong>YOUR FUTURE</strong>
+          <small>STARTS HERE</small>
+        </div>
+        <div class="floating-card floating-card-one">💻 Web Development</div>
+        <div class="floating-card floating-card-two">🤖 AI & Machine Learning</div>
+        <div class="floating-card floating-card-three">⚡ Electronics</div>
+      </div>
+    </section>
+
+    <section class="stats-section" aria-label="Platform highlights">
+      <div><strong>6+</strong><span>Career domains</span></div>
+      <div><strong>9</strong><span>Demo opportunities</span></div>
+      <div><strong>100%</strong><span>Responsive design</span></div>
+      <div><strong>24/7</strong><span>Browse anytime</span></div>
+    </section>
+
+    <section class="search-section" aria-label="Internship search">
+      <div>
+        <label for="search-input">Search opportunities</label>
+        <input id="search-input" type="search"
+          placeholder="Search role, company or location">
+      </div>
+
+      <div>
+        <label for="domain-filter">Domain</label>
+        <select id="domain-filter">
+          <option value="all">All domains</option>
+          <option value="Web Development">Web Development</option>
+          <option value="AI/ML">AI / ML</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="UI/UX Design">UI/UX Design</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="sort-filter">Sort by</label>
+        <select id="sort-filter">
+          <option value="recommended">Recommended</option>
+          <option value="stipend-high">Highest stipend</option>
+          <option value="stipend-low">Lowest stipend</option>
+          <option value="duration-short">Shortest duration</option>
+        </select>
+      </div>
+
+      <button id="clear-filters" class="secondary-button" type="button">
+        Clear filters
+      </button>
+    </section>
+
+    <section id="internship-list" class="listing-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE YOUR OPTIONS</p>
+          <h2 id="listing-heading">Featured Internships</h2>
+          <p class="muted">Find an opportunity that matches your interests.</p>
+        </div>
+        <p id="result-count" aria-live="polite">Loading...</p>
+      </div>
+
+      <div id="internship-grid" class="internship-grid"></div>
+
+      <div id="status-message" class="status-message" hidden>
+        <h3 id="status-title">No internships found</h3>
+        <p id="status-description">Try changing your search or filters.</p>
+        <button id="status-reset" class="primary-button" type="button">
+          Show all internships
+        </button>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="center-heading">
+        <p class="eyebrow">SIMPLE AND EASY</p>
+        <h2>How InternHub works</h2>
+        <p class="muted">Three simple steps to discover your next opportunity.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">🔎</span>
+          <h3>Explore</h3>
+          <p>Search internships across different professional domains.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">♡</span>
+          <h3>Save your favourites</h3>
+          <p>Bookmark opportunities and revisit them whenever you want.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">🚀</span>
+          <h3>Take the next step</h3>
+          <p>Review internship details and prepare your application.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT INTERNHUB</p>
+        <h2>Helping students turn potential into opportunity.</h2>
+        <p>
+          InternHub is a student-focused internship discovery platform
+          designed to make exploring career opportunities easier.
+          We bring opportunities from different domains into one
+          simple, accessible and responsive interface.
+        </p>
+        <p>
+          Whether you are interested in software development, artificial
+          intelligence, electronics, data science, cybersecurity or
+          design, InternHub helps you explore your interests and take
+          the next step towards professional growth.
+        </p>
+        <a href="#internship-list" class="primary-button">Explore Opportunities</a>
+      </div>
+
+      <div class="mission-card">
+        <span class="mission-symbol">✦</span>
+        <h3>Our mission</h3>
+        <p>
+          To make internship discovery simple, accessible and
+          student-friendly, helping learners connect their education
+          with practical career experience.
+        </p>
+        <hr>
+        <h3>Our values</h3>
+        <ul>
+          <li>Accessible design for every screen</li>
+          <li>Simple and transparent information</li>
+          <li>Continuous learning and growth</li>
+          <li>Equal opportunity to explore</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <p class="eyebrow">READY TO GET STARTED?</p>
+      <h2>Your next opportunity is waiting.</h2>
+      <p>Create a demo profile and start saving internships that interest you.</p>
+      <button id="cta-signup" class="primary-button" type="button">
+        Get Started
+      </button>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Contact InternHub</h2>
+      <p>
+        Have feedback or suggestions about this project?
+        Send us a message using the form below.
+      </p>
+
+      <form id="contact-form" class="contact-form">
+        <div>
+          <label for="contact-name">Your name</label>
+          <input id="contact-name" name="name" required maxlength="80"
+            placeholder="Enter your name">
+        </div>
+        <div>
+          <label for="contact-email">Email address</label>
+          <input id="contact-email" name="email" type="email" required
+            maxlength="254" placeholder="you@example.com">
+        </div>
+        <div>
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required
+            minlength="5" maxlength="1000" rows="4"
+            placeholder="Write your message..."></textarea>
+        </div>
+        <button class="primary-button" type="submit">Submit feedback</button>
+        <p id="contact-status" role="status"></p>
+      </form>
+      <p class="muted small">
+        Demo form only: messages are not sent to a real support team.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">I</span> InternHub
+    </a>
+    <p>Explore. Learn. Grow.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#internship-list">Internships</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="small muted">© 2026 InternHub. Student project demonstration.</p>
+  </footer>
+
+  <!-- Login and registration dialog -->
+  <dialog id="auth-dialog" class="app-dialog">
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">WELCOME TO INTERNHUB</p>
+        <h2 id="auth-title">Welcome back</h2>
+      </div>
+      <button class="icon-button" type="button" data-close="auth-dialog"
+        aria-label="Close login dialog">✕</button>
+    </div>
+
+    <div class="auth-tabs" aria-label="Account options">
+      <button id="tab-login" class="auth-tab active" type="button">Login</button>
+      <button id="tab-signup" class="auth-tab" type="button">Sign Up</button>
+    </div>
+
+    <form id="auth-form">
+      <div id="signup-fields" hidden>
+        <label for="auth-name">Full name</label>
+        <input id="auth-name" name="name" autocomplete="name"
+          maxlength="80" placeholder="Your full name">
+      </div>
+
+      <label for="auth-email">Email address</label>
+      <input id="auth-email" name="email" type="email"
+        autocomplete="email" required maxlength="254"
+        placeholder="you@example.com">
+
+      <label for="auth-password">Password</label>
+      <div class="password-row">
+        <input id="auth-password" name="password" type="password"
+          autocomplete="current-password" required minlength="8"
+          maxlength="128" placeholder="At least 8 characters">
+        <button id="toggle-password" class="secondary-button" type="button">
+          Show
+        </button>
+      </div>
+
+      <div id="confirm-field" hidden>
+        <label for="confirm-password">Confirm password</label>
+        <input id="confirm-password" type="password"
+          autocomplete="new-password" minlength="8" maxlength="128"
+          placeholder="Enter password again">
+      </div>
+
+      <button id="auth-submit" class="primary-button full-button" type="submit">
+        Login
+      </button>
+      <button id="forgot-password" class="text-button" type="button">
+        Forgot password?
+      </button>
+      <p id="auth-status" class="form-status" role="status"></p>
+    </form>
+
+    <p class="small muted">
+      Demonstration only. Do not enter a real password. This front-end
+      demo does not create secure accounts or verify identities.
+    </p>
+  </dialog>
+
+  <!-- Internship details and application form -->
+  <dialog id="detail-dialog" class="app-dialog">
+    <div class="dialog-header">
+      <h2 id="detail-title">Internship details</h2>
+      <button class="icon-button" type="button" data-close="detail-dialog"
+        aria-label="Close internship details">✕</button>
+    </div>
+    <div id="detail-content"></div>
+    <form id="application-form" hidden>
+      <h3>Demo application</h3>
+      <label for="applicant-name">Your name</label>
+      <input id="applicant-name" required maxlength="80"
+        placeholder="Enter your name">
+      <label for="applicant-email">Your email</label>
+      <input id="applicant-email" type="email" required maxlength="254"
+        placeholder="you@example.com">
+      <label for="applicant-note">Why are you interested?</label>
+      <textarea id="applicant-note" rows="3" maxlength="1000"
+        placeholder="Briefly describe your interest"></textarea>
+      <button class="primary-button full-button" type="submit">
+        Submit demo application
+      </button>
+      <p id="application-status" role="status"></p>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+</body>
+</html>
